@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Parcial3.Entidades;
+
 namespace Parcial3.Controllers
 {
     [ApiController]
@@ -19,12 +21,17 @@ namespace Parcial3.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<PedidoController>>> Get()
+        [HttpGet("/listadoPedidos")]
+        public async Task<ActionResult<List<Pedido>>> GetAll()
         {
-            var pedido = await DbContext.Pedido.ToListAsync();
-            return Ok(pedido);
+            return await DbContext.Pedido.ToListAsync();
         }
 
         [HttpPost]
+        public async Task<ActionResult> Post(Pedido pedido)
+        {
+
+        }
+
     }
 }

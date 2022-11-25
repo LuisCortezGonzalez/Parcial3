@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Parcial3.Entidades;
+using Parcial3.DTOs;
 
 namespace Parcial3.Controllers
 {
@@ -22,7 +23,7 @@ namespace Parcial3.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<ClienteController>>> Get()
+        public async Task<ActionResult<List<Cliente>>> Get()
         {
             var cliente = await DbContext.Cliente.ToListAsync();
             return Ok(cliente);
