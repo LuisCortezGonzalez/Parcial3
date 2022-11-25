@@ -48,7 +48,7 @@ namespace Parcial3.Controllers
           
             DbContext.Update(cliente);
             await DbContext.SaveChangesAsync();
-            return NoContent();
+            return Ok();
         }
 
         [HttpDelete("{id:int}")]

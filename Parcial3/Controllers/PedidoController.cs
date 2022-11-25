@@ -26,12 +26,12 @@ namespace Parcial3.Controllers
         {
             return await DbContext.Pedido.ToListAsync();
         }
-
+        /*
         [HttpPost]
         public async Task<ActionResult> Post(Pedido pedido)
         {
 
-        }
+        }*/
 
     }
 }
